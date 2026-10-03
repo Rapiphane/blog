@@ -9,6 +9,26 @@
   --font-app: var(--font-space-grotesk);
 }
 
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
 :root,
 [data-theme="light"] {
   --background: #fafafa;
