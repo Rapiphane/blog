@@ -1,0 +1,43 @@
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-app: var(--font-space-grotesk);
+}
+
+:root,
+[data-theme="light"] {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --accent: #0284c7;
+  /* Sky Blue */
+  --accent-foreground: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+}
+
+[data-theme="dark"] {
+  --background: #09090b;
+  /* Pure Zinc Black */
+  --foreground: #f4f4f5;
+  /* High-contrast crisp white */
+  --accent: #38bdf8;
+  /* Neon Cyan Accent */
+  --accent-foreground: #09090b;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --border: #27272a;
+  /* Subtle dark zinc border */
+}
+
+/* Developer Dot-Matrix Background Texture */
+body {
+  background-color: var(--background);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

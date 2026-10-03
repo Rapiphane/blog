@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import Socials from "./Socials.astro";
+import { useTranslations } from "@/i18n";
+
+type Props = {
+  noMarginTop?: boolean;
+} & HTMLAttributes<"footer">;
+
+const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+
+const t = useTranslations(Astro.currentLocale);
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  {...attrs}
+>
+  <div
+    class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
+  >
+    <Socials />
+    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
+      <span>{t.footer.copyright} &#169; {currentYear}</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <span>{t.footer.allRightsReserved}</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <span>
+        Made with 💖 &amp;&nbsp;
+        <a
+          href="https://github.com/satnaing/astro-paper"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-accent inline-block font-medium underline decoration-dashed underline-offset-4 transition-transform duration-200 hover:scale-[1.01] hover:rotate-3"
+        >
+          Astro Paper
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
