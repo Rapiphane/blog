@@ -58,7 +58,7 @@ const isActive = (path: string) => {
   </div>
   <nav
     id="nav-menu"
-    class="flex  w-full flex-col items-center justify-center sm:ms-2 sm:flex-row sm:justify-center sm:space-x-4 sm:py-0"
+    class="flex w-full flex-col items-center justify-center sm:ms-2 sm:flex-row sm:justify-center sm:space-x-4 sm:py-0"
   >
     <button
       id="menu-btn"
@@ -190,3 +190,27 @@ const isActive = (path: string) => {
     </ul>
   </nav>
 </header>
+
+<script>
+  const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
+  const menuItems = document.querySelector<HTMLElement>("#menu-items");
+  const menuIcon = document.querySelector<SVGElement>("#menu-icon");
+  const closeIcon = document.querySelector<SVGElement>("#close-icon");
+
+  menuBtn?.addEventListener("click", () => {
+    const isOpen = !menuItems?.classList.contains("hidden");
+
+    menuItems?.classList.toggle("hidden");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+
+    menuBtn.setAttribute("aria-expanded", String(!isOpen));
+
+    menuBtn.setAttribute(
+      "aria-label",
+      !isOpen
+        ? (menuBtn.dataset.labelClose ?? "Close menu")
+        : (menuBtn.dataset.labelOpen ?? "Open menu")
+    );
+  });
+</script>

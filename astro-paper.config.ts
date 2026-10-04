@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://rapiphane.pages.dev/",
     title: "Rapiphane",
-    description: " Rapiphane's Personal blog site",
+    description: "Rapiphane's Personal blog site",
     author: "Rapiphane",
     profile: "",
     ogImage: "default-og.jpg",
